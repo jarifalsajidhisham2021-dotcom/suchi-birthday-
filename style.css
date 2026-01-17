@@ -1,15 +1,79 @@
-*{margin:0;padding:0;box-sizing:border-box;font-family:Georgia,serif}
-body{overflow-x:hidden}
-.bg{position:fixed;inset:0;background:url("images/background.jpg") center/cover no-repeat;z-index:-2}
-.bg::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45)}
-.section{min-height:100vh;display:none;justify-content:center;align-items:center;padding:20px}
-.section.active{display:flex}
-.card{background:rgba(255,255,255,.9);padding:30px;border-radius:18px;max-width:500px;text-align:center;box-shadow:0 10px 25px rgba(0,0,0,.2)}
-#countdown{font-size:1.8rem;margin-top:20px;font-weight:bold}
-button{margin-top:20px;padding:12px 25px;border:none;border-radius:30px;background:#f4c430;font-size:1rem}
-.gallery{display:flex;flex-direction:column;gap:20px}
-.gallery img{width:100%;max-width:350px;margin:auto;border:6px solid #fff;border-radius:12px;box-shadow:0 6px 15px rgba(0,0,0,.3)}
-.bottom-btn{display:block;margin:30px auto}
-.cake{font-size:4rem}
-.candle{font-size:2.5rem;animation:flicker 1s infinite}
-@keyframes flicker{0%{opacity:1}50%{opacity:.6}100%{opacity:1}}
+/* General */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: url('images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    text-align: center;
+}
+
+/* Sections */
+section {
+    display: none;
+    padding: 50px 20px;
+    min-height: 100vh;
+}
+
+/* Section 1: Countdown */
+#countdown {
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+/* Section 2: Photos */
+#photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+#photo-gallery img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    padding: 5px; /* space inside the frame */
+    border: 5px solid #fff; /* simple white frame */
+    border-radius: 15px; /* rounded corners */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* elegant shadow */
+    background-color: #fff; /* frame background */
+    transition: transform 0.3s;
+}
+
+/* Add hover effect for elegance */
+#photo-gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* Section 3: Love Letter */
+.message-frame {
+    display: inline-block;
+    padding: 30px;
+    max-width: 600px;
+    background: url('images/frame.png') no-repeat center center;
+    background-size: contain;
+    color: #333;
+}
+.message-frame button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+}
+
+/* Section 4: Cake & Candle */
+.cake-container {
+    position: relative;
+    display: inline-block;
+}
+.candle {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#blow-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+}
