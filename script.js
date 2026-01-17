@@ -1,31 +1,63 @@
-const countdownEl=document.getElementById("countdown");
-const targetDate=new Date("January 8, 2026 00:00:00").getTime();
-
-const timer=setInterval(()=>{
-  const now=new Date().getTime();
-  const diff=targetDate-now;
-
-  if(diff<=0){
-    clearInterval(timer);
-    showSection("letter-section");
-    return;
-  }
-
-  const d=Math.floor(diff/(1000*60*60*24));
-  const h=Math.floor((diff/(1000*60*60))%24);
-  const m=Math.floor((diff/(1000*60))%60);
-  const s=Math.floor((diff/1000)%60);
-
-  countdownEl.innerHTML=`${d}d ${h}h ${m}m ${s}s`;
-},1000);
-
-function showSection(id){
-  document.querySelectorAll(".section").forEach(sec=>sec.classList.remove("active"));
-  document.getElementById(id).classList.add("active");
+const sections = document.querySelectorAll(".section");
+function showSection(id) {
+  sections.forEach(s => s.style.display = "none");
+  document.getElementById(id).style.display = "flex";
 }
 
-function showGallery(){showSection("gallery-section")}
-function showCake(){
+showSection("countdown-section");
+
+// Countdown
+const target = new Date("January 18, 2026 00:00:00").getTime();
+setInterval(() => {
+  const now = new Date().getTime();
+  const diff = target - now;
+  document.getElementById("countdown").innerText =
+    Math.max(0, Math.floor(diff / (1000 * 60 * 60 * 24))) + " days left 💛";
+}, 1000);
+
+// Navigation
+function showGallery() { showSection("gallery-section"); }
+function showLetter() { showSection("letter-section"); }
+function showPuzzle() { showSection("puzzle-section"); initPuzzle(); }
+function showCake() {
   showSection("cake-section");
-  document.getElementById("music").play();
-    }
+  document.getElementById("birthdayMusic").play();
+}
+
+// Puzzle logic
+const puzzle = document.getElementById("puzzle");
+const unlockBtn = document.getElementById("unlockBtn");
+const msg = document.getElementById("puzzleMsg");
+let order = [...Array(9).keys()];
+let first = null;
+
+function initPuzzle() {
+  puzzle.innerHTML = "";
+  order.sort(() => Math.random() - 0.5);
+  order.forEach((pos, i) => {
+    const d = document.createElement("div");
+    d.className = "puzzle-piece";
+    d.style.backgroundPosition =
+      `${-(pos % 3) * 100}px ${-Math.floor(pos / 3) * 100}px`;
+    d.onclick = () => swap(i);
+    puzzle.appendChild(d);
+  });
+}
+
+function swap(i) {
+  if (first === null) first = i;
+  else {
+    [order[first], order[i]] = [order[i], order[first]];
+    first = null;
+    initPuzzle();
+    checkSolved();
+  }
+}
+
+function checkSolved() {
+  if (order.every((v, i) => v === i)) {
+    document.getElementById("successSound").play();
+    msg.style.display = "block";
+    unlockBtn.style.display = "inline-block";
+  }
+}
