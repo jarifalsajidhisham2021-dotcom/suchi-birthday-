@@ -1,58 +1,64 @@
-*{margin:0;padding:0;box-sizing:border-box;font-family:Georgia,serif}
-body{overflow-x:hidden}
-.bg{position:fixed;inset:0;background:url("images/background.jpg") center/cover no-repeat;z-index:-2}
-.bg::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45)}
-.section{min-height:100vh;display:none;justify-content:center;align-items:center;padding:20px}
-.section.active{display:flex}
-.card{background:rgba(255,255,255,.9);padding:30px;border-radius:18px;max-width:500px;text-align:center;box-shadow:0 10px 25px rgba(0,0,0,.2)}
-#countdown{font-size:1.8rem;margin-top:20px;font-weight:bold}
-button{margin-top:20px;padding:12px 25px;border:none;border-radius:30px;background:#f4c430;font-size:1rem}
-.gallery{display:flex;flex-direction:column;gap:20px}
-.gallery img{width:100%;max-width:350px;margin:auto;border:6px solid #fff;border-radius:12px;box-shadow:0 6px 15px rgba(0,0,0,.3)}
-.bottom-btn{display:block;margin:30px auto}
-.cake{font-size:4rem}
-.candle{font-size:2.5rem;animation:flicker 1s infinite}
-@keyframes flicker{0%{opacity:1}50%{opacity:.6}100%{opacity:1}}
-/* Gallery Improvements */
-.gallery-card {
-  max-width: 420px;
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: url("images/bg.jpg") no-repeat center/cover;
 }
 
-.gallery-title {
-  margin-bottom: 20px;
-  font-size: 1.4rem;
-  color: #444;
+.section {
+  display: none;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  background: rgba(255,255,255,0.9);
+  padding: 20px;
+  border-radius: 16px;
+  text-align: center;
+  max-width: 90%;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  background: #ff8fab;
+  color: white;
+  font-size: 16px;
 }
 
 .gallery {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
 }
 
-/* Photo Frame */
 .frame {
-  background: #fff;
-  padding: 8px;
-  border-radius: 14px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-  animation: fadeUp 0.8s ease forwards;
+  border: 5px solid #fff;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .frame img {
   width: 100%;
   display: block;
-  border-radius: 10px;
 }
 
-/* Soft animation */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Puzzle */
+.puzzle {
+  width: 300px;
+  height: 300px;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+
+.puzzle-piece {
+  background-image: url("images/puzzle.jpg");
+  background-size: 300px 300px;
+  border-radius: 6px;
+  cursor: pointer;
 }
