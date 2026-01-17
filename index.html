@@ -3,29 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday Suchi 💛</title>
+  <title>Happy Birthday Suchi 🌻</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <audio id="birthdayMusic" src="audio/birthday.mp3" loop></audio>
-<audio id="successSound" src="audio/success.mp3"></audio>
 
 <!-- COUNTDOWN -->
-<section id="countdown-section" class="section">
+<section id="countdown" class="section">
   <div class="card">
     <h1>Happy Birthday Suchi 💛</h1>
-    <p id="countdown"></p>
+    <p id="timer"></p>
     <button onclick="showGallery()">Continue →</button>
   </div>
 </section>
 
 <!-- GALLERY -->
-<section id="gallery-section" class="section">
+<section id="gallery" class="section">
   <div class="card">
     <h2>Our Memories 📸</h2>
+
     <div class="gallery">
-      <!-- photos -->
+      <!-- 20 PHOTOS -->
       <div class="frame"><img src="images/photo1.jpg"></div>
       <div class="frame"><img src="images/photo2.jpg"></div>
       <div class="frame"><img src="images/photo3.jpg"></div>
@@ -54,45 +54,28 @@
 </section>
 
 <!-- LETTER -->
-<section id="letter-section" class="section">
+<section id="letter" class="section">
   <div class="card">
-    <h2>For You 💛</h2>
+    <h2>For You 🌻</h2>
     <p>
       Dear Suchi,<br><br>
-      You are my favorite person, my peace, my happiness.
-      Every moment with you matters to me.
-      <br><br>
+      You are my sunshine on every cloudy day.
+      Just like sunflowers turn to the sun,
+      my heart always turns to you.<br><br>
       Happy Birthday 💛
     </p>
-    <button onclick="showPuzzle()">One last thing… 🧩</button>
-  </div>
-</section>
-
-<!-- PUZZLE -->
-<section id="puzzle-section" class="section">
-  <div class="card">
-    <h2>Solve this to unlock your cake 🧩</h2>
-    <div id="puzzle" class="puzzle"></div>
-
-    <p id="puzzleMsg" style="display:none;">
-      I knew you could do it, Suchi 💛<br>
-      You complete my world.
-    </p>
-
-    <button id="unlockBtn" style="display:none;" onclick="showCake()">
-      Go to your cake 🎂
-    </button>
+    <button onclick="showCake()">Open your cake 🎂</button>
   </div>
 </section>
 
 <!-- CAKE -->
-<section id="cake-section" class="section">
+<section id="cake" class="section">
   <div class="card">
     <h1>🎂 Happy Birthday Suchi 🎂</h1>
-    <p>May your life be full of love 💛</p>
+    <p>May your life bloom like sunflowers 🌻</p>
   </div>
 </section>
 
 <script src="script.js"></script>
 </body>
-  </html>
+</html>
