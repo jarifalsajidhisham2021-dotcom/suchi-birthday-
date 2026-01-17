@@ -1,0 +1,65 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Suchi 💛</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div class="bg"></div>
+
+<section id="countdown-section" class="section active">
+  <div class="card">
+    <h1>Suchi… 🌻</h1>
+    <p>something beautiful is waiting for you</p>
+    <div id="countdown">Loading...</div>
+  </div>
+</section>
+
+<section id="letter-section" class="section">
+  <div class="card">
+    <p>
+      <strong>Dear Suchi,</strong><br><br>
+      Today isn’t just your birthday.<br>
+      It’s the day the world became gentler —
+      because <strong>you arrived in it</strong>.<br><br>
+      Even from far away,<br>
+      every thought of you feels close,<br>
+      every smile of yours feels like home.<br><br>
+      Walk through this little garden slowly…<br>
+      it’s made just for you 💛
+    </p>
+    <button onclick="showGallery()">Continue →</button>
+  </div>
+</section>
+
+<section id="gallery-section" class="section">
+  <div class="gallery">
+    <img src="images/photo1.jpg">
+    <img src="images/photo2.jpg">
+    <img src="images/photo3.jpg">
+    <img src="images/photo4.jpg">
+    <img src="images/photo5.jpg">
+    <img src="images/photo6.jpg">
+    <img src="images/photo7.jpg">
+    <img src="images/photo8.jpg">
+    <img src="images/photo9.jpg">
+    <img src="images/photo10.jpg">
+  </div>
+  <button class="bottom-btn" onclick="showCake()">One last thing…</button>
+</section>
+
+<section id="cake-section" class="section">
+  <div class="card">
+    <div class="cake">🎂</div>
+    <div class="candle">🕯️</div>
+    <h1>Happy Birthday, Suchi 💛</h1>
+  </div>
+  <audio id="music" src="music/happy-birthday.mp3" loop></audio>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
