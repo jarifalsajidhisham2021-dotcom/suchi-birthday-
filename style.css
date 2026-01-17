@@ -1,32 +1,35 @@
 body {
   margin: 0;
-  font-family: sans-serif;
-  background: url("images/bg.jpg") no-repeat center/cover;
+  font-family: Arial, sans-serif;
+  background-image: url("images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .section {
   display: none;
   min-height: 100vh;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 .card {
-  background: rgba(255,255,255,0.9);
+  background: rgba(255, 255, 255, 0.9);
   padding: 20px;
-  border-radius: 16px;
-  text-align: center;
+  border-radius: 18px;
   max-width: 90%;
+  text-align: center;
 }
 
 button {
-  margin-top: 15px;
-  padding: 10px 20px;
-  border-radius: 20px;
+  padding: 10px 22px;
   border: none;
+  border-radius: 22px;
   background: #ff8fab;
   color: white;
   font-size: 16px;
+  margin-top: 15px;
 }
 
 .gallery {
@@ -36,8 +39,8 @@ button {
 }
 
 .frame {
-  border: 5px solid #fff;
-  border-radius: 10px;
+  border: 5px solid white;
+  border-radius: 12px;
   overflow: hidden;
 }
 
@@ -46,7 +49,7 @@ button {
   display: block;
 }
 
-/* Puzzle */
+/* PUZZLE */
 .puzzle {
   width: 300px;
   height: 300px;
