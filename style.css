@@ -13,3 +13,46 @@ button{margin-top:20px;padding:12px 25px;border:none;border-radius:30px;backgrou
 .cake{font-size:4rem}
 .candle{font-size:2.5rem;animation:flicker 1s infinite}
 @keyframes flicker{0%{opacity:1}50%{opacity:.6}100%{opacity:1}}
+/* Gallery Improvements */
+.gallery-card {
+  max-width: 420px;
+}
+
+.gallery-title {
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  color: #444;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Photo Frame */
+.frame {
+  background: #fff;
+  padding: 8px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.frame img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Soft animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
