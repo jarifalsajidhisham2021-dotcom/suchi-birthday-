@@ -2,7 +2,8 @@
 document.getElementById('countdown-section').style.display = 'block';
 
 // Countdown logic
-const countdownDate = new Date('Jan 8, 2026 00:00:00').getTime();
+// For testing only, countdown 1 minute from now
+const countdownDate = new Date(new Date().getTime() + 1*60*1000).getTime();
 const countdownInterval = setInterval(() => {
     const now = new Date().getTime();
     const distance = countdownDate - now;
