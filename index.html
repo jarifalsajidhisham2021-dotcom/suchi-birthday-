@@ -1,45 +1,33 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happy Birthday Suchi 💛</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="bg"></div>
+<!-- BACKGROUND MUSIC -->
+<audio id="birthdayMusic" src="audio/birthday.mp3" loop></audio>
+<audio id="successSound" src="audio/success.mp3"></audio>
 
-<section id="countdown-section" class="section active">
+<!-- COUNTDOWN -->
+<section id="countdown-section" class="section">
   <div class="card">
-    <h1>Suchi… 🌻</h1>
-    <p>something beautiful is waiting for you</p>
-    <div id="countdown">Loading...</div>
-  </div>
-</section>
-
-<section id="letter-section" class="section">
-  <div class="card">
-    <p>
-      <strong>Dear Suchi,</strong><br><br>
-      Today isn’t just your birthday.<br>
-      It’s the day the world became gentler —
-      because <strong>you arrived in it</strong>.<br><br>
-      Even from far away,<br>
-      every thought of you feels close,<br>
-      every smile of yours feels like home.<br><br>
-      Walk through this little garden slowly…<br>
-      it’s made just for you 💛
-    </p>
+    <h1>Happy Birthday Suchi 💛</h1>
+    <p id="countdown"></p>
     <button onclick="showGallery()">Continue →</button>
   </div>
 </section>
 
+<!-- GALLERY -->
 <section id="gallery-section" class="section">
-  <div class="card gallery-card">
-    <h2 class="gallery-title">Some moments I love 💛</h2>
-
+  <div class="card">
+    <h2>Our Memories 📸</h2>
     <div class="gallery">
+      <!-- 20 photos -->
+      <!-- COPY THIS PATTERN -->
       <div class="frame"><img src="images/photo1.jpg"></div>
       <div class="frame"><img src="images/photo2.jpg"></div>
       <div class="frame"><img src="images/photo3.jpg"></div>
@@ -50,19 +38,60 @@
       <div class="frame"><img src="images/photo8.jpg"></div>
       <div class="frame"><img src="images/photo9.jpg"></div>
       <div class="frame"><img src="images/photo10.jpg"></div>
+
+      <div class="frame"><img src="images/photo11.jpg"></div>
+      <div class="frame"><img src="images/photo12.jpg"></div>
+      <div class="frame"><img src="images/photo13.jpg"></div>
+      <div class="frame"><img src="images/photo14.jpg"></div>
+      <div class="frame"><img src="images/photo15.jpg"></div>
+      <div class="frame"><img src="images/photo16.jpg"></div>
+      <div class="frame"><img src="images/photo17.jpg"></div>
+      <div class="frame"><img src="images/photo18.jpg"></div>
+      <div class="frame"><img src="images/photo19.jpg"></div>
+      <div class="frame"><img src="images/photo20.jpg"></div>
     </div>
 
-    <button class="bottom-btn" onclick="showCake()">One last thing…</button>
+    <button onclick="showLetter()">Next 💌</button>
   </div>
 </section>
 
+<!-- LETTER -->
+<section id="letter-section" class="section">
+  <div class="card">
+    <h2>For You 💛</h2>
+    <p>
+      Dear Suchi,<br><br>
+      You are the most beautiful part of my life.
+      Every memory, every smile, every moment with you
+      means everything to me.
+      <br><br>
+      Happy Birthday, my love 💛
+    </p>
+    <button onclick="showPuzzle()">One last thing… 🧩</button>
+  </div>
+</section>
+
+<!-- PUZZLE -->
+<section id="puzzle-section" class="section">
+  <div class="card">
+    <h2>Solve this to unlock your cake 🧩</h2>
+    <div id="puzzle" class="puzzle"></div>
+
+    <p id="puzzleMsg" style="display:none;">
+      I knew you could do it, Suchi 💛<br>
+      Just like this puzzle, you complete my world.
+    </p>
+
+    <button id="unlockBtn" style="display:none;" onclick="showCake()">Go to your cake 🎂</button>
+  </div>
+</section>
+
+<!-- CAKE -->
 <section id="cake-section" class="section">
   <div class="card">
-    <div class="cake">🎂</div>
-    <div class="candle">🕯️</div>
-    <h1>Happy Birthday, Suchi 💛</h1>
+    <h1>🎂 Happy Birthday Suchi 🎂</h1>
+    <p>May all your dreams come true 💛</p>
   </div>
-  <audio id="music" src="music/happy-birthday.mp3" loop></audio>
 </section>
 
 <script src="script.js"></script>
