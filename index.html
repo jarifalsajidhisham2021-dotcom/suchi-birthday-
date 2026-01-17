@@ -1,65 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Happy Birthday Suchi 💛</title>
-  <link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Suchi 🎉</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Section 1: Countdown -->
+    <section id="countdown-section">
+        <h1>Happy Birthday, Suchi! 🎂</h1>
+        <div id="countdown">
+            <span id="days">00</span> Days
+            <span id="hours">00</span> Hours
+            <span id="minutes">00</span> Minutes
+            <span id="seconds">00</span> Seconds
+        </div>
+    </section>
 
-<div class="bg"></div>
+    <!-- Section 2: Photos -->
+    <section id="photos-section">
+        <h2>20 Beautiful Moments</h2>
+        <div id="photo-gallery">
+            <!-- Photos will be added by JS -->
+        </div>
+    </section>
 
-<section id="countdown-section" class="section active">
-  <div class="card">
-    <h1>Suchi… 🌻</h1>
-    <p>something beautiful is waiting for you</p>
-    <div id="countdown">Loading...</div>
-  </div>
-</section>
+    <!-- Section 3: Love Letter -->
+    <section id="message-section">
+        <div class="message-frame">
+            <h2>My Dear Suchi 💛</h2>
+            <p>
+                [Write your love letter here. Something romantic, cute, heartfelt.]
+            </p>
+            <button id="continue-btn">Continue 🎉</button>
+        </div>
+    </section>
 
-<section id="letter-section" class="section">
-  <div class="card">
-    <p>
-      <strong>Dear Suchi,</strong><br><br>
-      Today isn’t just your birthday.<br>
-      It’s the day the world became gentler —
-      because <strong>you arrived in it</strong>.<br><br>
-      Even from far away,<br>
-      every thought of you feels close,<br>
-      every smile of yours feels like home.<br><br>
-      Walk through this little garden slowly…<br>
-      it’s made just for you 💛
-    </p>
-    <button onclick="showGallery()">Continue →</button>
-  </div>
-</section>
+    <!-- Section 4: Cake & Candle -->
+    <section id="cake-section">
+        <div class="cake-container">
+            <img src="images/cake.png" alt="Cake" class="cake">
+            <img src="images/candle.png" alt="Candle" class="candle" id="candle">
+        </div>
+        <button id="blow-btn">Blow Candle 🎂</button>
+        <audio id="birthday-music" src="music/happy-birthday.mp3"></audio>
+    </section>
 
-<section id="gallery-section" class="section">
-  <div class="gallery">
-    <img src="images/photo1.jpg">
-    <img src="images/photo2.jpg">
-    <img src="images/photo3.jpg">
-    <img src="images/photo4.jpg">
-    <img src="images/photo5.jpg">
-    <img src="images/photo6.jpg">
-    <img src="images/photo7.jpg">
-    <img src="images/photo8.jpg">
-    <img src="images/photo9.jpg">
-    <img src="images/photo10.jpg">
-  </div>
-  <button class="bottom-btn" onclick="showCake()">One last thing…</button>
-</section>
-
-<section id="cake-section" class="section">
-  <div class="card">
-    <div class="cake">🎂</div>
-    <div class="candle">🕯️</div>
-    <h1>Happy Birthday, Suchi 💛</h1>
-  </div>
-  <audio id="music" src="music/happy-birthday.mp3" loop></audio>
-</section>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
