@@ -16,20 +16,20 @@ body {
 
 .card {
   background: rgba(255, 255, 255, 0.9);
-  padding: 20px;
+  padding: 22px;
   border-radius: 18px;
   max-width: 90%;
   text-align: center;
 }
 
 button {
-  padding: 10px 22px;
+  margin-top: 15px;
+  padding: 10px 24px;
   border: none;
-  border-radius: 22px;
-  background: #ff8fab;
+  border-radius: 24px;
+  background: #f4a261;
   color: white;
   font-size: 16px;
-  margin-top: 15px;
 }
 
 .gallery {
@@ -47,21 +47,4 @@ button {
 .frame img {
   width: 100%;
   display: block;
-}
-
-/* PUZZLE */
-.puzzle {
-  width: 300px;
-  height: 300px;
-  margin: 20px auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 4px;
-}
-
-.puzzle-piece {
-  background-image: url("images/puzzle.jpg");
-  background-size: 300px 300px;
-  border-radius: 6px;
-  cursor: pointer;
 }
