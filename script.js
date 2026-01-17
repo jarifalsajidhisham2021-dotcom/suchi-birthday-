@@ -1,4 +1,5 @@
 const sections = document.querySelectorAll(".section");
+
 function showSection(id) {
   sections.forEach(s => s.style.display = "none");
   document.getElementById(id).style.display = "flex";
@@ -6,7 +7,7 @@ function showSection(id) {
 
 showSection("countdown-section");
 
-// Countdown
+/* COUNTDOWN */
 const target = new Date("January 18, 2026 00:00:00").getTime();
 setInterval(() => {
   const now = new Date().getTime();
@@ -15,7 +16,7 @@ setInterval(() => {
     Math.max(0, Math.floor(diff / (1000 * 60 * 60 * 24))) + " days left 💛";
 }, 1000);
 
-// Navigation
+/* NAVIGATION */
 function showGallery() { showSection("gallery-section"); }
 function showLetter() { showSection("letter-section"); }
 function showPuzzle() { showSection("puzzle-section"); initPuzzle(); }
@@ -24,23 +25,25 @@ function showCake() {
   document.getElementById("birthdayMusic").play();
 }
 
-// Puzzle logic
+/* PUZZLE */
 const puzzle = document.getElementById("puzzle");
 const unlockBtn = document.getElementById("unlockBtn");
 const msg = document.getElementById("puzzleMsg");
+
 let order = [...Array(9).keys()];
 let first = null;
 
 function initPuzzle() {
   puzzle.innerHTML = "";
   order.sort(() => Math.random() - 0.5);
+
   order.forEach((pos, i) => {
-    const d = document.createElement("div");
-    d.className = "puzzle-piece";
-    d.style.backgroundPosition =
+    const piece = document.createElement("div");
+    piece.className = "puzzle-piece";
+    piece.style.backgroundPosition =
       `${-(pos % 3) * 100}px ${-Math.floor(pos / 3) * 100}px`;
-    d.onclick = () => swap(i);
-    puzzle.appendChild(d);
+    piece.onclick = () => swap(i);
+    puzzle.appendChild(piece);
   });
 }
 
@@ -60,4 +63,4 @@ function checkSolved() {
     msg.style.display = "block";
     unlockBtn.style.display = "inline-block";
   }
-}
+      }
