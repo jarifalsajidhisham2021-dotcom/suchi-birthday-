@@ -1,31 +1,51 @@
-const countdownEl=document.getElementById("countdown");
-const targetDate=new Date("January 8, 2026 00:00:00").getTime();
+// Show Countdown Section
+document.getElementById('countdown-section').style.display = 'block';
 
-const timer=setInterval(()=>{
-  const now=new Date().getTime();
-  const diff=targetDate-now;
+// Countdown logic
+const countdownDate = new Date('Jan 18, 2026 00:00:00').getTime();
+const countdownInterval = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = countdownDate - now;
 
-  if(diff<=0){
-    clearInterval(timer);
-    showSection("letter-section");
-    return;
-  }
+    const days = Math.floor(distance / (1000*60*60*24));
+    const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+    const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+    const seconds = Math.floor((distance % (1000*60)) / 1000);
 
-  const d=Math.floor(diff/(1000*60*60*24));
-  const h=Math.floor((diff/(1000*60*60))%24);
-  const m=Math.floor((diff/(1000*60))%60);
-  const s=Math.floor((diff/1000)%60);
+    document.getElementById('days').innerText = days.toString().padStart(2,'0');
+    document.getElementById('hours').innerText = hours.toString().padStart(2,'0');
+    document.getElementById('minutes').innerText = minutes.toString().padStart(2,'0');
+    document.getElementById('seconds').innerText = seconds.toString().padStart(2,'0');
 
-  countdownEl.innerHTML=`${d}d ${h}h ${m}m ${s}s`;
-},1000);
+    if(distance <= 0){
+        clearInterval(countdownInterval);
+        document.getElementById('countdown-section').style.display = 'none';
+        document.getElementById('photos-section').style.display = 'block';
+        loadPhotos();
+    }
+}, 1000);
 
-function showSection(id){
-  document.querySelectorAll(".section").forEach(sec=>sec.classList.remove("active"));
-  document.getElementById(id).classList.add("active");
+// Load 20 photos
+function loadPhotos() {
+    const gallery = document.getElementById('photo-gallery');
+    for(let i=1;i<=20;i++){
+        const img = document.createElement('img');
+        img.src = `images/photo${i}.jpg`;
+        img.alt = `Photo ${i}`;
+        gallery.appendChild(img);
+    }
 }
 
-function showGallery(){showSection("gallery-section")}
-function showCake(){
-  showSection("cake-section");
-  document.getElementById("music").play();
-}
+// Continue button for message
+document.getElementById('continue-btn').addEventListener('click', () => {
+    document.getElementById('photos-section').style.display = 'none';
+    document.getElementById('message-section').style.display = 'none';
+    document.getElementById('cake-section').style.display = 'block';
+});
+
+// Blow candle
+document.getElementById('blow-btn').addEventListener('click', () => {
+    document.getElementById('candle').style.display = 'none';
+    const music = document.getElementById('birthday-music');
+    music.play();
+});
